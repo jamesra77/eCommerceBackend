@@ -1,5 +1,6 @@
 package com.ecom.productcatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class Category {
     private Long id;
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "category",
                 cascade = CascadeType.ALL,
                 fetch = FetchType.LAZY)
